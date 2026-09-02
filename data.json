@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "app": "HabitNJA",
+  "habits": [
+    {
+      "id": "water",
+      "name": "Minum Air",
+      "icon": "💧",
+      "color": "#3b82f6",
+      "category": "Health",
+      "note": "Jaga tubuh tetap terhidrasi.",
+      "schedule": [0, 1, 2, 3, 4, 5, 6],
+      "history": {}
+    },
+    {
+      "id": "reading",
+      "name": "Baca 10 Menit",
+      "icon": "📖",
+      "color": "#8b5cf6",
+      "category": "Study",
+      "note": "Sedikit membaca setiap hari.",
+      "schedule": [0, 1, 2, 3, 4, 5, 6],
+      "history": {}
+    },
+    {
+      "id": "journal",
+      "name": "Journaling",
+      "icon": "📝",
+      "color": "#ec4899",
+      "category": "Mind",
+      "note": "Tulis satu hal yang kamu syukuri.",
+      "schedule": [1, 2, 3, 4, 5],
+      "history": {}
+    },
+    {
+      "id": "exercise",
+      "name": "Stretching",
+      "icon": "🧘",
+      "color": "#10b981",
+      "category": "Health",
+      "note": "Gerak sebentar supaya badan rileks.",
+      "schedule": [1, 3, 5],
+      "history": {}
+    }
+  ]
+}
