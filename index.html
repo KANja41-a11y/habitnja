@@ -18,7 +18,7 @@
 
   <div class="app">
 
-    <!-- SIDEBAR -->
+    <!-- ================= SIDEBAR ================= -->
     <aside class="sidebar">
 
       <div class="brand">
@@ -29,6 +29,7 @@
           <p>your little progress</p>
         </div>
       </div>
+
 
       <nav class="navigation">
 
@@ -59,6 +60,7 @@
 
       </nav>
 
+
       <div class="sidebar-bottom">
 
         <div class="mini-quote">
@@ -76,8 +78,9 @@
     </aside>
 
 
-    <!-- MAIN -->
+    <!-- ================= MAIN ================= -->
     <main class="main">
+
 
       <!-- MOBILE HEADER -->
       <header class="mobile-header">
@@ -93,28 +96,47 @@
 
         </div>
 
-        <button class="icon-button" id="mobileThemeButton">
+        <button
+          class="icon-button"
+          id="mobileThemeButton"
+          aria-label="Toggle dark mode"
+        >
           ☾
         </button>
 
       </header>
 
 
-      <!-- TOPBAR -->
+      <!-- ================= TOPBAR ================= -->
       <header class="topbar">
 
         <div>
-          <p class="today-label" id="todayLabel"></p>
-          <h2 id="pageTitle">Good morning ✨</h2>
+
+          <p
+            class="today-label"
+            id="todayLabel"
+          ></p>
+
+          <h2 id="pageTitle">
+            Good morning ✨
+          </h2>
+
         </div>
+
 
         <div class="top-actions">
 
-          <button class="secondary-button" id="todayButton">
+          <button
+            class="secondary-button"
+            id="todayButton"
+          >
             Today
           </button>
 
-          <button class="primary-button" id="addHabitButton">
+          <button
+            class="primary-button"
+            id="addHabitButton"
+          >
             ＋ Add Habit
           </button>
 
@@ -123,12 +145,20 @@
       </header>
 
 
-      <!-- ================= DASHBOARD ================= -->
+      <!-- ================================================= -->
+      <!-- DASHBOARD -->
+      <!-- ================================================= -->
 
-      <section class="view active" id="dashboardView">
+      <section
+        class="view active"
+        id="dashboardView"
+      >
 
+        <!-- HERO -->
         <div class="hero-grid">
 
+
+          <!-- WELCOME -->
           <div class="welcome-card">
 
             <div class="welcome-text">
@@ -149,16 +179,29 @@
 
             </div>
 
-            <div class="floating-star star-one">✦</div>
-            <div class="floating-star star-two">✧</div>
-            <div class="floating-star star-three">⋆</div>
+
+            <div class="floating-star star-one">
+              ✦
+            </div>
+
+            <div class="floating-star star-two">
+              ✧
+            </div>
+
+            <div class="floating-star star-three">
+              ⋆
+            </div>
 
           </div>
 
 
+          <!-- PROGRESS -->
           <div class="progress-card">
 
-            <div class="progress-ring" id="progressRing">
+            <div
+              class="progress-ring"
+              id="progressRing"
+            >
 
               <div class="progress-inner">
 
@@ -196,9 +239,10 @@
         </div>
 
 
-        <!-- QUICK STATS -->
+        <!-- ================= QUICK STATS ================= -->
 
         <div class="quick-stats">
+
 
           <div class="stat-card">
 
@@ -207,8 +251,15 @@
             </div>
 
             <div>
-              <span>Best streak</span>
-              <strong id="bestStreak">0 days</strong>
+
+              <span>
+                Best streak
+              </span>
+
+              <strong id="bestStreak">
+                0 days
+              </strong>
+
             </div>
 
           </div>
@@ -221,8 +272,15 @@
             </div>
 
             <div>
-              <span>Total completed</span>
-              <strong id="totalCompleted">0</strong>
+
+              <span>
+                Total completed
+              </span>
+
+              <strong id="totalCompleted">
+                0
+              </strong>
+
             </div>
 
           </div>
@@ -235,8 +293,15 @@
             </div>
 
             <div>
-              <span>Active habits</span>
-              <strong id="activeHabits">0</strong>
+
+              <span>
+                Active habits
+              </span>
+
+              <strong id="activeHabits">
+                0
+              </strong>
+
             </div>
 
           </div>
@@ -244,11 +309,12 @@
         </div>
 
 
-        <!-- HABITS -->
+        <!-- ================= HABITS ================= -->
 
         <div class="section-header">
 
           <div>
+
             <span class="eyebrow">
               YOUR ROUTINE
             </span>
@@ -256,6 +322,7 @@
             <h2>
               Today's habits
             </h2>
+
           </div>
 
 
@@ -268,9 +335,11 @@
             >
 
             <select id="categoryFilter">
+
               <option value="all">
                 All
               </option>
+
             </select>
 
           </div>
@@ -278,14 +347,18 @@
         </div>
 
 
-        <div class="habits-list" id="habitsList"></div>
+        <div
+          class="habits-list"
+          id="habitsList"
+        ></div>
 
 
-        <!-- WEEKLY -->
+        <!-- ================= WEEKLY ================= -->
 
         <div class="section-header weekly-header">
 
           <div>
+
             <span class="eyebrow">
               YOUR WEEK
             </span>
@@ -293,15 +366,19 @@
             <h2>
               Weekly progress
             </h2>
+
           </div>
 
         </div>
 
 
-        <div class="week-card" id="weekCard"></div>
+        <div
+          class="week-card"
+          id="weekCard"
+        ></div>
 
 
-        <!-- QUOTE -->
+        <!-- ================= QUOTE ================= -->
 
         <div class="daily-quote">
 
@@ -323,10 +400,14 @@
       </section>
 
 
+      <!-- ================================================= -->
+      <!-- CALENDAR -->
+      <!-- ================================================= -->
 
-      <!-- ================= CALENDAR ================= -->
-
-      <section class="view" id="calendarView">
+      <section
+        class="view"
+        id="calendarView"
+      >
 
         <div class="view-heading">
 
@@ -349,13 +430,21 @@
 
           <div class="month-controls">
 
-            <button class="icon-button" id="prevMonth">
+            <button
+              class="icon-button"
+              id="prevMonth"
+            >
               ‹
             </button>
 
-            <strong id="calendarMonth"></strong>
+            <strong id="calendarMonth">
+              January 2026
+            </strong>
 
-            <button class="icon-button" id="nextMonth">
+            <button
+              class="icon-button"
+              id="nextMonth"
+            >
               ›
             </button>
 
@@ -389,10 +478,14 @@
       </section>
 
 
+      <!-- ================================================= -->
+      <!-- STATISTICS -->
+      <!-- ================================================= -->
 
-      <!-- ================= STATISTICS ================= -->
-
-      <section class="view" id="statsView">
+      <section
+        class="view"
+        id="statsView"
+      >
 
         <div class="view-heading">
 
@@ -415,7 +508,10 @@
         </div>
 
 
+        <!-- STATS OVERVIEW -->
+
         <div class="stats-overview">
+
 
           <div class="big-stat">
 
@@ -470,6 +566,8 @@
         </div>
 
 
+        <!-- CHART -->
+
         <div class="chart-card">
 
           <div class="chart-heading">
@@ -492,6 +590,8 @@
 
         </div>
 
+
+        <!-- HABIT PERFORMANCE -->
 
         <div class="habit-stat-section">
 
@@ -519,8 +619,9 @@
       </section>
 
 
-
-      <!-- ================= ACHIEVEMENTS ================= -->
+      <!-- ================================================= -->
+      <!-- ACHIEVEMENTS -->
+      <!-- ================================================= -->
 
       <section
         class="view"
@@ -556,8 +657,9 @@
       </section>
 
 
-
-      <!-- ================= SETTINGS ================= -->
+      <!-- ================================================= -->
+      <!-- SETTINGS -->
+      <!-- ================================================= -->
 
       <section
         class="view"
@@ -587,6 +689,9 @@
 
         <div class="settings-card">
 
+
+          <!-- THEME -->
+
           <div class="setting-row">
 
             <div class="setting-info">
@@ -601,6 +706,7 @@
 
             </div>
 
+
             <button
               class="secondary-button"
               id="settingsThemeButton"
@@ -610,6 +716,8 @@
 
           </div>
 
+
+          <!-- EXPORT -->
 
           <div class="setting-row">
 
@@ -625,6 +733,7 @@
 
             </div>
 
+
             <button
               class="secondary-button"
               id="exportButton"
@@ -634,6 +743,8 @@
 
           </div>
 
+
+          <!-- IMPORT -->
 
           <div class="setting-row">
 
@@ -649,6 +760,7 @@
 
             </div>
 
+
             <button
               class="secondary-button"
               id="importButton"
@@ -658,6 +770,8 @@
 
           </div>
 
+
+          <!-- RESET -->
 
           <div class="setting-row danger-row">
 
@@ -673,6 +787,7 @@
 
             </div>
 
+
             <button
               class="danger-button"
               id="resetButton"
@@ -681,6 +796,7 @@
             </button>
 
           </div>
+
 
         </div>
 
@@ -699,8 +815,9 @@
   </div>
 
 
-
-  <!-- ================= MODAL ================= -->
+  <!-- ================================================= -->
+  <!-- ADD / EDIT HABIT MODAL -->
+  <!-- ================================================= -->
 
   <div
     class="modal-overlay"
@@ -708,6 +825,7 @@
   >
 
     <div class="modal">
+
 
       <div class="modal-header">
 
@@ -723,9 +841,11 @@
 
         </div>
 
+
         <button
           class="close-button"
           id="closeModal"
+          type="button"
         >
           ×
         </button>
@@ -741,6 +861,8 @@
         >
 
 
+        <!-- NAME -->
+
         <label>
 
           Habit name
@@ -755,6 +877,8 @@
 
         </label>
 
+
+        <!-- ICON + CATEGORY -->
 
         <div class="form-grid">
 
@@ -788,6 +912,8 @@
         </div>
 
 
+        <!-- NOTE -->
+
         <label>
 
           Note
@@ -800,6 +926,8 @@
 
         </label>
 
+
+        <!-- SCHEDULE -->
 
         <div class="schedule-label">
 
@@ -816,43 +944,81 @@
 
         <div class="day-selector">
 
+
           <label>
-            <input type="checkbox" value="0" class="day-check">
+            <input
+              type="checkbox"
+              value="0"
+              class="day-check"
+            >
             <span>Sun</span>
           </label>
 
+
           <label>
-            <input type="checkbox" value="1" class="day-check">
+            <input
+              type="checkbox"
+              value="1"
+              class="day-check"
+            >
             <span>Mon</span>
           </label>
 
+
           <label>
-            <input type="checkbox" value="2" class="day-check">
+            <input
+              type="checkbox"
+              value="2"
+              class="day-check"
+            >
             <span>Tue</span>
           </label>
 
+
           <label>
-            <input type="checkbox" value="3" class="day-check">
+            <input
+              type="checkbox"
+              value="3"
+              class="day-check"
+            >
             <span>Wed</span>
           </label>
 
+
           <label>
-            <input type="checkbox" value="4" class="day-check">
+            <input
+              type="checkbox"
+              value="4"
+              class="day-check"
+            >
             <span>Thu</span>
           </label>
 
+
           <label>
-            <input type="checkbox" value="5" class="day-check">
+            <input
+              type="checkbox"
+              value="5"
+              class="day-check"
+            >
             <span>Fri</span>
           </label>
 
+
           <label>
-            <input type="checkbox" value="6" class="day-check">
+            <input
+              type="checkbox"
+              value="6"
+              class="day-check"
+            >
             <span>Sat</span>
           </label>
 
+
         </div>
 
+
+        <!-- COLOR -->
 
         <div class="color-picker">
 
@@ -860,58 +1026,92 @@
             Color
           </span>
 
+
           <div class="color-options">
 
+
             <label>
+
               <input
                 type="radio"
                 name="habitColor"
                 value="#8b5cf6"
                 checked
               >
-              <span style="--dot:#8b5cf6"></span>
+
+              <span
+                style="--dot:#8b5cf6"
+              ></span>
+
             </label>
 
+
             <label>
+
               <input
                 type="radio"
                 name="habitColor"
                 value="#ec4899"
               >
-              <span style="--dot:#ec4899"></span>
+
+              <span
+                style="--dot:#ec4899"
+              ></span>
+
             </label>
 
+
             <label>
+
               <input
                 type="radio"
                 name="habitColor"
                 value="#f59e0b"
               >
-              <span style="--dot:#f59e0b"></span>
+
+              <span
+                style="--dot:#f59e0b"
+              ></span>
+
             </label>
 
+
             <label>
+
               <input
                 type="radio"
                 name="habitColor"
                 value="#10b981"
               >
-              <span style="--dot:#10b981"></span>
+
+              <span
+                style="--dot:#10b981"
+              ></span>
+
             </label>
 
+
             <label>
+
               <input
                 type="radio"
                 name="habitColor"
                 value="#3b82f6"
               >
-              <span style="--dot:#3b82f6"></span>
+
+              <span
+                style="--dot:#3b82f6"
+              ></span>
+
             </label>
+
 
           </div>
 
         </div>
 
+
+        <!-- ACTIONS -->
 
         <div class="modal-actions">
 
@@ -922,6 +1122,7 @@
           >
             Cancel
           </button>
+
 
           <button
             type="submit"
@@ -939,10 +1140,14 @@
   </div>
 
 
-
+  <!-- ================================================= -->
   <!-- TOAST -->
+  <!-- ================================================= -->
 
-  <div class="toast" id="toast">
+  <div
+    class="toast"
+    id="toast"
+  >
 
     <span id="toastIcon">
       ✦
@@ -954,6 +1159,8 @@
 
   </div>
 
+
+  <!-- JAVASCRIPT -->
 
   <script src="script.js"></script>
 
