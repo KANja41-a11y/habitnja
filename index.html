@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HabitNJA ✦ Your Little Progress</title>
+
+  <meta
+    name="description"
+    content="HabitNJA — cute and aesthetic habit tracker."
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="brand">
+        <div class="brand-icon">✦</div>
+
+        <div>
+          <h1>HabitNJA</h1>
+          <p>your little progress</p>
+        </div>
+      </div>
+
+      <nav class="navigation">
+
+        <button class="nav-item active" data-view="dashboard">
+          <span>⌂</span>
+          <span>Today</span>
+        </button>
+
+        <button class="nav-item" data-view="calendar">
+          <span>▦</span>
+          <span>Calendar</span>
+        </button>
+
+        <button class="nav-item" data-view="stats">
+          <span>◔</span>
+          <span>Statistics</span>
+        </button>
+
+        <button class="nav-item" data-view="achievements">
+          <span>✧</span>
+          <span>Achievements</span>
+        </button>
+
+        <button class="nav-item" data-view="settings">
+          <span>⚙</span>
+          <span>Settings</span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <div class="mini-quote">
+          <span>☁</span>
+          <p>Small steps still count.</p>
+        </div>
+
+        <button class="theme-button" id="themeButton">
+          <span id="themeIcon">☾</span>
+          <span>Dark mode</span>
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+      <!-- MOBILE HEADER -->
+      <header class="mobile-header">
+
+        <div class="brand">
+
+          <div class="brand-icon">✦</div>
+
+          <div>
+            <h1>HabitNJA</h1>
+            <p>your little progress</p>
+          </div>
+
+        </div>
+
+        <button class="icon-button" id="mobileThemeButton">
+          ☾
+        </button>
+
+      </header>
+
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+
+        <div>
+          <p class="today-label" id="todayLabel"></p>
+          <h2 id="pageTitle">Good morning ✨</h2>
+        </div>
+
+        <div class="top-actions">
+
+          <button class="secondary-button" id="todayButton">
+            Today
+          </button>
+
+          <button class="primary-button" id="addHabitButton">
+            ＋ Add Habit
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <!-- ================= DASHBOARD ================= -->
+
+      <section class="view active" id="dashboardView">
+
+        <div class="hero-grid">
+
+          <div class="welcome-card">
+
+            <div class="welcome-text">
+
+              <span class="eyebrow">
+                TODAY'S LITTLE WIN
+              </span>
+
+              <h2>
+                Keep going,<br>
+                you're doing great! ♡
+              </h2>
+
+              <p>
+                Progress doesn't have to be perfect.
+                Just keep showing up.
+              </p>
+
+            </div>
+
+            <div class="floating-star star-one">✦</div>
+            <div class="floating-star star-two">✧</div>
+            <div class="floating-star star-three">⋆</div>
+
+          </div>
+
+
+          <div class="progress-card">
+
+            <div class="progress-ring" id="progressRing">
+
+              <div class="progress-inner">
+
+                <strong id="progressPercent">
+                  0%
+                </strong>
+
+                <span>
+                  completed
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="progress-info">
+
+              <span class="eyebrow">
+                DAILY PROGRESS
+              </span>
+
+              <h3 id="progressTitle">
+                Let's start!
+              </h3>
+
+              <p id="progressText">
+                Complete your first habit today.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUICK STATS -->
+
+        <div class="quick-stats">
+
+          <div class="stat-card">
+
+            <div class="stat-icon purple">
+              🔥
+            </div>
+
+            <div>
+              <span>Best streak</span>
+              <strong id="bestStreak">0 days</strong>
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon pink">
+              ✓
+            </div>
+
+            <div>
+              <span>Total completed</span>
+              <strong id="totalCompleted">0</strong>
+            </div>
+
+          </div>
+
+
+          <div class="stat-card">
+
+            <div class="stat-icon yellow">
+              ✦
+            </div>
+
+            <div>
+              <span>Active habits</span>
+              <strong id="activeHabits">0</strong>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- HABITS -->
+
+        <div class="section-header">
+
+          <div>
+            <span class="eyebrow">
+              YOUR ROUTINE
+            </span>
+
+            <h2>
+              Today's habits
+            </h2>
+          </div>
+
+
+          <div class="filter-area">
+
+            <input
+              type="text"
+              id="habitSearch"
+              placeholder="Search habit..."
+            >
+
+            <select id="categoryFilter">
+              <option value="all">
+                All
+              </option>
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <div class="habits-list" id="habitsList"></div>
+
+
+        <!-- WEEKLY -->
+
+        <div class="section-header weekly-header">
+
+          <div>
+            <span class="eyebrow">
+              YOUR WEEK
+            </span>
+
+            <h2>
+              Weekly progress
+            </h2>
+          </div>
+
+        </div>
+
+
+        <div class="week-card" id="weekCard"></div>
+
+
+        <!-- QUOTE -->
+
+        <div class="daily-quote">
+
+          <span class="quote-decoration">
+            “
+          </span>
+
+          <p id="quoteText">
+            You don't have to be perfect.
+            You just have to keep going.
+          </p>
+
+          <span class="quote-author">
+            — HabitNJA
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= CALENDAR ================= -->
+
+      <section class="view" id="calendarView">
+
+        <div class="view-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              TRACK YOUR JOURNEY
+            </span>
+
+            <h2>
+              Habit Calendar
+            </h2>
+
+            <p>
+              See your little wins day by day.
+            </p>
+
+          </div>
+
+
+          <div class="month-controls">
+
+            <button class="icon-button" id="prevMonth">
+              ‹
+            </button>
+
+            <strong id="calendarMonth"></strong>
+
+            <button class="icon-button" id="nextMonth">
+              ›
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="calendar-card">
+
+          <div class="calendar-weekdays">
+
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+
+          </div>
+
+
+          <div
+            class="calendar-grid"
+            id="calendarGrid"
+          ></div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= STATISTICS ================= -->
+
+      <section class="view" id="statsView">
+
+        <div class="view-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              YOUR NUMBERS
+            </span>
+
+            <h2>
+              Statistics
+            </h2>
+
+            <p>
+              A little data about your progress.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="stats-overview">
+
+          <div class="big-stat">
+
+            <span>
+              Total completions
+            </span>
+
+            <strong id="statsTotal">
+              0
+            </strong>
+
+            <small>
+              habits completed
+            </small>
+
+          </div>
+
+
+          <div class="big-stat">
+
+            <span>
+              Best streak
+            </span>
+
+            <strong id="statsBest">
+              0
+            </strong>
+
+            <small>
+              days in a row
+            </small>
+
+          </div>
+
+
+          <div class="big-stat">
+
+            <span>
+              Success rate
+            </span>
+
+            <strong id="statsRate">
+              0%
+            </strong>
+
+            <small>
+              scheduled habit days
+            </small>
+
+          </div>
+
+        </div>
+
+
+        <div class="chart-card">
+
+          <div class="chart-heading">
+
+            <span class="eyebrow">
+              LAST 7 DAYS
+            </span>
+
+            <h3>
+              Completion activity
+            </h3>
+
+          </div>
+
+
+          <div
+            class="bar-chart"
+            id="barChart"
+          ></div>
+
+        </div>
+
+
+        <div class="habit-stat-section">
+
+          <div class="section-header">
+
+            <div>
+
+              <span class="eyebrow">
+                BREAKDOWN
+              </span>
+
+              <h2>
+                Habit performance
+              </h2>
+
+            </div>
+
+          </div>
+
+
+          <div id="habitStatsList"></div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= ACHIEVEMENTS ================= -->
+
+      <section
+        class="view"
+        id="achievementsView"
+      >
+
+        <div class="view-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              KEEP GOING
+            </span>
+
+            <h2>
+              Achievements
+            </h2>
+
+            <p>
+              Little badges for your little wins.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div
+          class="achievement-grid"
+          id="achievementGrid"
+        ></div>
+
+      </section>
+
+
+
+      <!-- ================= SETTINGS ================= -->
+
+      <section
+        class="view"
+        id="settingsView"
+      >
+
+        <div class="view-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              MAKE IT YOURS
+            </span>
+
+            <h2>
+              Settings
+            </h2>
+
+            <p>
+              Manage your HabitNJA data.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="settings-card">
+
+          <div class="setting-row">
+
+            <div class="setting-info">
+
+              <strong>
+                Appearance
+              </strong>
+
+              <span>
+                Switch between light and dark mode.
+              </span>
+
+            </div>
+
+            <button
+              class="secondary-button"
+              id="settingsThemeButton"
+            >
+              Toggle theme
+            </button>
+
+          </div>
+
+
+          <div class="setting-row">
+
+            <div class="setting-info">
+
+              <strong>
+                Export data
+              </strong>
+
+              <span>
+                Save all your habits as a JSON file.
+              </span>
+
+            </div>
+
+            <button
+              class="secondary-button"
+              id="exportButton"
+            >
+              Export JSON
+            </button>
+
+          </div>
+
+
+          <div class="setting-row">
+
+            <div class="setting-info">
+
+              <strong>
+                Import data
+              </strong>
+
+              <span>
+                Restore habits from a HabitNJA JSON file.
+              </span>
+
+            </div>
+
+            <button
+              class="secondary-button"
+              id="importButton"
+            >
+              Import JSON
+            </button>
+
+          </div>
+
+
+          <div class="setting-row danger-row">
+
+            <div class="setting-info">
+
+              <strong>
+                Reset everything
+              </strong>
+
+              <span>
+                Delete all your local HabitNJA data.
+              </span>
+
+            </div>
+
+            <button
+              class="danger-button"
+              id="resetButton"
+            >
+              Reset
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <input
+          type="file"
+          id="importFile"
+          accept=".json,application/json"
+          hidden
+        >
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+
+  <!-- ================= MODAL ================= -->
+
+  <div
+    class="modal-overlay"
+    id="habitModal"
+  >
+
+    <div class="modal">
+
+      <div class="modal-header">
+
+        <div>
+
+          <span class="eyebrow">
+            CREATE ROUTINE
+          </span>
+
+          <h2 id="modalTitle">
+            Add new habit
+          </h2>
+
+        </div>
+
+        <button
+          class="close-button"
+          id="closeModal"
+        >
+          ×
+        </button>
+
+      </div>
+
+
+      <form id="habitForm">
+
+        <input
+          type="hidden"
+          id="habitId"
+        >
+
+
+        <label>
+
+          Habit name
+
+          <input
+            type="text"
+            id="habitName"
+            placeholder="e.g. Read 10 pages"
+            required
+            maxlength="40"
+          >
+
+        </label>
+
+
+        <div class="form-grid">
+
+          <label>
+
+            Icon
+
+            <input
+              type="text"
+              id="habitIcon"
+              value="✦"
+              maxlength="4"
+            >
+
+          </label>
+
+
+          <label>
+
+            Category
+
+            <input
+              type="text"
+              id="habitCategory"
+              placeholder="e.g. Study"
+              maxlength="20"
+            >
+
+          </label>
+
+        </div>
+
+
+        <label>
+
+          Note
+
+          <textarea
+            id="habitNote"
+            placeholder="A little reminder..."
+            maxlength="100"
+          ></textarea>
+
+        </label>
+
+
+        <div class="schedule-label">
+
+          <span>
+            Schedule
+          </span>
+
+          <small>
+            Choose the days for this habit.
+          </small>
+
+        </div>
+
+
+        <div class="day-selector">
+
+          <label>
+            <input type="checkbox" value="0" class="day-check">
+            <span>Sun</span>
+          </label>
+
+          <label>
+            <input type="checkbox" value="1" class="day-check">
+            <span>Mon</span>
+          </label>
+
+          <label>
+            <input type="checkbox" value="2" class="day-check">
+            <span>Tue</span>
+          </label>
+
+          <label>
+            <input type="checkbox" value="3" class="day-check">
+            <span>Wed</span>
+          </label>
+
+          <label>
+            <input type="checkbox" value="4" class="day-check">
+            <span>Thu</span>
+          </label>
+
+          <label>
+            <input type="checkbox" value="5" class="day-check">
+            <span>Fri</span>
+          </label>
+
+          <label>
+            <input type="checkbox" value="6" class="day-check">
+            <span>Sat</span>
+          </label>
+
+        </div>
+
+
+        <div class="color-picker">
+
+          <span>
+            Color
+          </span>
+
+          <div class="color-options">
+
+            <label>
+              <input
+                type="radio"
+                name="habitColor"
+                value="#8b5cf6"
+                checked
+              >
+              <span style="--dot:#8b5cf6"></span>
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="habitColor"
+                value="#ec4899"
+              >
+              <span style="--dot:#ec4899"></span>
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="habitColor"
+                value="#f59e0b"
+              >
+              <span style="--dot:#f59e0b"></span>
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="habitColor"
+                value="#10b981"
+              >
+              <span style="--dot:#10b981"></span>
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="habitColor"
+                value="#3b82f6"
+              >
+              <span style="--dot:#3b82f6"></span>
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+          <button
+            type="button"
+            class="secondary-button"
+            id="cancelModal"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="submit"
+            class="primary-button"
+          >
+            Save habit
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- TOAST -->
+
+  <div class="toast" id="toast">
+
+    <span id="toastIcon">
+      ✦
+    </span>
+
+    <span id="toastMessage">
+      Saved!
+    </span>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
